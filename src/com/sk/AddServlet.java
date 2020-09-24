@@ -41,16 +41,7 @@ public class AddServlet extends HttpServlet {
 		int i = Integer.parseInt(request.getParameter("num1"));
     	int j = Integer.parseInt(request.getParameter("num2"));
     	
-//    	PrintWriter out = response.getWriter();
-//    	out.println(i+j);
-    	
-//    	request.setAttribute("res", (i+j));
-//    	
-//    	RequestDispatcher reqDis = request.getRequestDispatcher("square");
-//    	
-//    	reqDis.forward(request, response);
-    	
-    	response.sendRedirect("square?k="+(i+j)); // URL rewriting
+
 
     	
 	}
