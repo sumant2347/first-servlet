@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,9 +44,9 @@ public class AddServlet extends HttpServlet {
     	int j = Integer.parseInt(request.getParameter("num2"));
     	int k = i+j;
     	
-    	HttpSession hs = request.getSession();
+    	Cookie cookie = new Cookie("res", k + ""); // just converting to string by appending ""
     	
-    	hs.setAttribute("res", k);
+    	response.addCookie(cookie);
     	
     	response.sendRedirect("square");
 

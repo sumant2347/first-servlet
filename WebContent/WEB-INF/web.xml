@@ -25,5 +25,10 @@
 		</servlet-name>
 		<url-pattern>/square</url-pattern>
 	</servlet-mapping>
+	
+	<context-param>
+		<param-name>Phone</param-name>
+		<param-value>Oppo</param-value>
+	</context-param>
 	  
 </web-app>
