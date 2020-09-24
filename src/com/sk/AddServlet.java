@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class AddServlet extends HttpServlet {
@@ -40,8 +41,13 @@ public class AddServlet extends HttpServlet {
 		
 		int i = Integer.parseInt(request.getParameter("num1"));
     	int j = Integer.parseInt(request.getParameter("num2"));
+    	int k = i+j;
     	
-
+    	HttpSession hs = request.getSession();
+    	
+    	hs.setAttribute("res", k);
+    	
+    	response.sendRedirect("square");
 
     	
 	}

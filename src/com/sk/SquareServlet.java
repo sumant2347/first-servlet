@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 /**
  * Servlet implementation class SquareServlet
@@ -28,9 +30,14 @@ public class SquareServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int k = Integer.parseInt(request.getParameter("k"));
+		
+		HttpSession hs = request.getSession();
+		
+		int k = (int) hs.getAttribute("res");
 		
 		k = k * k;
+		
+//		hs.removeAttribute("res");
 		
 		PrintWriter out = response.getWriter();
 		out.println("Square: " + k);
