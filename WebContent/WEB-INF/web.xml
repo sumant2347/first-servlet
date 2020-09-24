@@ -27,8 +27,24 @@
 	</servlet-mapping>
 	
 	<context-param>
-		<param-name>Phone</param-name>
+		<param-name>phone</param-name>
 		<param-value>Oppo</param-value>
 	</context-param>
+	
+	
+	<servlet>
+		<servlet-name>
+			me
+		</servlet-name>
+		<servlet-class>
+			com.sk.MyServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>
+			me
+		</servlet-name>
+		<url-pattern>/me</url-pattern>
+	</servlet-mapping>
 	  
 </web-app>
